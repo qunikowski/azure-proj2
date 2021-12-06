@@ -28,3 +28,8 @@ W przyszłości możliwe jest rozszerzenie zakresu funckjonowania aplikacji o ko
 ## Architektura
 Aplikacja korzysta z serwisów oferowanych w całości przez platformę Azure. Schemat działania przedstawia się następująco:
 ![Optional Text](images/architektura.png)
+
+### Custom Vision
+W obrębie serwisu zostały umieszczone zdjęcia liści zdrowych oraz z różnymi chorobami. Następnie model został wytrenowany. Wyniki można uznać za zadowalające, co potwierdziły wykonywane na zbiorze testowym doświadczenia. Wyniki modelu przedstawiają się następująco:
+
+![Optional Text](images/performance.png)
