@@ -1,10 +1,22 @@
+import os
 import pyodbc
+from dotenv import load_dotenv
+from azure.keyvault.secrets import SecretClient
+from azure.identity import DefaultAzureCredential
 
-server = 'plant-disease-test-server.database.windows.net'
-database = 'test'
-username = 'admin123'
-password = '{Test1234}'
-driver= '{SQL Server}'
+
+load_dotenv()
+KEY_VAULT_NAME = os.environ.get("keyVaultName")
+KVUri = f"https://{KEY_VAULT_NAME}.vault.azure.net"
+
+credential = DefaultAzureCredential()
+client = SecretClient(vault_url=KVUri, credential=credential)
+
+server = client.get_secret('server')
+database = client.get_secret('database')
+username = client.get_secret('username')
+password = client.get_secret('password')
+driver = client.get_secret('driver')
 
 def add_prediction(label):
     conn = pyodbc.connect('DRIVER='+driver+';SERVER=tcp:'+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
