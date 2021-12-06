@@ -1,0 +1,21 @@
+{% extends "common/layout.html" %}
+{% block title %}Strona główna{% endblock %}
+{% block main %}
+<div id="container">
+    <form class="form-container" method="post" enctype="multipart/form-data" action="/upload">
+        <div class="form-elements">
+            <p>
+                <label>Upload photo:</label>
+                <input type="file" name="file">
+            </p>
+        </div>
+        <input type="submit">
+    </form>
+    {% if prediction is defined %}
+    <div>
+        <p style="text-align: center">Result: {{prediction['tagName']}}</p>
+        <img src="/show/{{prediction['id']}}"></img>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

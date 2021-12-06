@@ -1,0 +1,19 @@
+{% extends "common/layout.html" %}
+{% block title %}Strona główna{% endblock %}
+{% block main %}
+<div id="container">
+    <h4>Last week statistics</h4>
+    <table class="table table-striped table-bordered">
+        <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Count</th>
+        </tr>
+        {% for key in predictions %}
+        <tr>
+            <th scope="row">{{key}}</th>
+            <th>{{predictions.get(key)}}</th>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

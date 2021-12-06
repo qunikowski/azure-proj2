@@ -1,0 +1,4 @@
+Flask
+opencv-python-headless==4.5.1.48
+numpy
+requests
