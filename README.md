@@ -45,14 +45,22 @@ W projekcie wykorzystane zostały nastepujące technologie:
 ## Opis rozwiązania
 
 ### 1. Stworzenie modelu
-W obrębie serwisu zostały umieszczone zdjęcia liści zdrowych oraz z różnymi chorobami. W ramach zbioru trenującego zostało wykorzystanych 200 zdjęć każdego rodzaju liścia oraz choroby. Dane te pochodziły z https://www.kaggle.com/vipoooool/new-plant-diseases-dataset. Następnie model został wytrenowany. Wyniki można uznać za zadowalające, co potwierdziły wykonywane na zbiorze testowym doświadczenia. Wyniki modelu przedstawiają się następująco:
+Do wytrenowania modelu wykorzystano serwis Custom Vision. W obrębie serwisu zostały umieszczone zdjęcia liści zdrowych oraz z różnymi chorobami. W ramach zbioru trenującego zostało wykorzystanych 200 zdjęć każdego rodzaju liścia oraz choroby. Dane te pochodziły z https://www.kaggle.com/vipoooool/new-plant-diseases-dataset. Następnie model został wytrenowany. Wyniki można uznać za zadowalające, co potwierdziły wykonywane na zbiorze testowym doświadczenia. Wyniki modelu przedstawiają się następująco:
 
 ![Optional Text](images/performance.png)
 
 ### 2. Stworzenie aplikacji webowej
-Do stworzenia aplikacji webowej wykorzystano Pythonowego frameworka Flask. Z aplikacją powiązana jest baza postgresql Aplikacja dostepna jest pod adresem: //LINK
+Do stworzenia aplikacji webowej wykorzystano Pythonowego frameworka Flask. Aplikacja umożliwia wgranie własnego zdjęcia i zwrócenie dla niego wyników predykcji. Dostępna jest również karta ze statystykami, gdzie widnieją najpopularniejsze wyniki z ostatniego tygodnia. Z aplikacją powiązana jest baza danych. Aplikacja dostepna jest w Azure App Service pod adresem: //LINK
 
-### 3. Wykorzystanie Azure Analitycs
+### 3. Stworzenie bazy danych
+Baza danych stworzona została w Azure Postgresql. W bazie przechowywane są wgrane zdjęcie, wynik predyckji oraz data. Dane te wykorzystywane są do pokazywania statystyk w aplikacji w zakładce Statistics. 
+
+### 4. Wizualizacja wyników
+Projekt zakładał podpięcie Power BI do bazy danych, jednak napotkano problem - konta studenckie nie mogły zostać zarejestrowane:
+ 
+    Twój dział IT wyłączył rejestrację dla produktu Microsoft Power BI. Skontaktuj się z nim, aby ukończyć rejestrację.
+    
+W związku z tym zdecydowano się zamiast tego zrobić podsumowanie w dodatkowej zakładce w aplikacji webowej.
 
 ## Demo działania
 
