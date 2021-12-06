@@ -29,7 +29,31 @@ W przyszłości możliwe jest rozszerzenie zakresu funckjonowania aplikacji o ko
 Aplikacja korzysta z serwisów oferowanych w całości przez platformę Azure. Schemat działania przedstawia się następująco:
 ![Optional Text](images/architektura.png)
 
-### Custom Vision
+## Funkcjonalności
+* Rozpoznawanie chorób roślin na podstawie wprowadzonych zdjęć
+* Zapisywanie zwracanych predykcji w bazie danych
+* Analizowanie chorób roślin w zwracanych przez aplikację predykcjach
+* Prezentowanie panujących tendencji dotyczących chorób roślin
+
+## Technologie
+W projekcie wykorzystane zostały nastepujące technologie:
+- Azure Custom Vision
+- Azure Postgresql
+- Azure Analitycs
+- Azure Web App
+
+## Opis rozwiązania
+
+### 1. Stworzenie modelu
 W obrębie serwisu zostały umieszczone zdjęcia liści zdrowych oraz z różnymi chorobami. Następnie model został wytrenowany. Wyniki można uznać za zadowalające, co potwierdziły wykonywane na zbiorze testowym doświadczenia. Wyniki modelu przedstawiają się następująco:
 
 ![Optional Text](images/performance.png)
+
+### 2. Stworzenie aplikacji webowej
+Do stworzenia aplikacji webowej wykorzystano Pythonowego frameworka Flask. Z aplikacją powiązana jest baza postgresql Aplikacja dostepna jest pod adresem: //LINK
+
+### 3. Wykorzystanie Azure Analitycs
+
+## Demo działania
+
+Demo działania aplikacji - >LINK<
