@@ -45,7 +45,7 @@ W projekcie wykorzystane zostały nastepujące technologie:
 ## Opis rozwiązania
 
 ### 1. Stworzenie modelu
-W obrębie serwisu zostały umieszczone zdjęcia liści zdrowych oraz z różnymi chorobami. Następnie model został wytrenowany. Wyniki można uznać za zadowalające, co potwierdziły wykonywane na zbiorze testowym doświadczenia. Wyniki modelu przedstawiają się następująco:
+W obrębie serwisu zostały umieszczone zdjęcia liści zdrowych oraz z różnymi chorobami. W ramach zbioru trenującego zostało wykorzystanych 200 zdjęć każdego rodzaju liścia oraz choroby. Dane te pochodziły z https://www.kaggle.com/vipoooool/new-plant-diseases-dataset. Następnie model został wytrenowany. Wyniki można uznać za zadowalające, co potwierdziły wykonywane na zbiorze testowym doświadczenia. Wyniki modelu przedstawiają się następująco:
 
 ![Optional Text](images/performance.png)
 
