@@ -45,7 +45,9 @@ W projekcie wykorzystane zostały nastepujące technologie:
 ## Opis rozwiązania
 
 ### 1. Stworzenie modelu
-Model do rozpoznawania chorób roślin stworzony został przy wykorzystaniu serwisu Azure Custom Vision. Do trenowania użyto //źródłaDanych
+W obrębie serwisu zostały umieszczone zdjęcia liści zdrowych oraz z różnymi chorobami. Następnie model został wytrenowany. Wyniki można uznać za zadowalające, co potwierdziły wykonywane na zbiorze testowym doświadczenia. Wyniki modelu przedstawiają się następująco:
+
+![Optional Text](images/performance.png)
 
 ### 2. Stworzenie aplikacji webowej
 Do stworzenia aplikacji webowej wykorzystano Pythonowego frameworka Flask. Z aplikacją powiązana jest baza postgresql Aplikacja dostepna jest pod adresem: //LINK
@@ -55,4 +57,3 @@ Do stworzenia aplikacji webowej wykorzystano Pythonowego frameworka Flask. Z apl
 ## Demo działania
 
 Demo działania aplikacji - >LINK<
-
