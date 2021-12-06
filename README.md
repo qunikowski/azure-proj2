@@ -15,18 +15,25 @@ Project 2 for Microsoft Azure on WUT
 * Danuta Stawiarz  - https://github.com/DanutaStawiarz
 
 ## Tematyka projektu
-Celem projektu było stworzenie aplikacji webowej skierowanej do rolników, która na podstawie wprowadzanych przez użytkownika zdjęć roślin, rozpoznaje choroby, na które te rośliny mogą cierpieć. Dodatkowo, na podstawie wprowadzanych przez użytkowników zdjęć, wyznaczane są aktualnie panujące trendy dotyczące wyszukiwanych chorób, dzięki czemu użytkownicy mogą ustrzec się przed chorobami roślin, które są aktualnie powszechne. Projekt zakładał wykorzystanie i przetestowania działania komponentów platformy Azure - Azure Custom Vision oraz Azure Analytics. Azure Postgresql, Azure Web App oraz udostępnienie programu potencjalnemu klientowi.
+W czasach niedoboru żywności na świecie niezwykle istotnym zagadnieniem okazuje się poszukiwanie sposobów, dzieki którym produkcja jedzenia stanie się bardziej wydajna. Obecnie, w niektórych regionach świata straty spowodowane chorobami roślin sięgają nawet 100%.
+
+Aplikacja ma na celu wsparcie rolników -  umożliwia zeskanowanie zdjęcia liścia w celu postawienia diagnozy. W wyniku użytkownik otrzymuje gatunek rośliny, z jakiej pochodzi liść, a także diagnozę, czy roślina jest zdrowa lub jaką z chorób posiada. Obecnie w aplikacja umożliwia diagnostykę dla:
+* jabłek - liść zdrowy/ apple scab( parch jabłoni)/ apple black rot (czarna zgnilizna)/ cedar apple rust
+* kukurydzy - liść zdrowy/ corn common rust (rdza zwykła) / gray leaf spot (szara plamistość liści)/ northern leaf blight
+* pomidor - liść zdrowy/ late blight/ leaf mold/ septoria leaf spot/ two-spotted spider mite/ mosaic virus/ target spot/ yellow curl virus
+
+W przyszłości możliwe jest rozszerzenie zakresu funckjonowania aplikacji o kolejne gatunki oraz choroby.
+
+
+## Architektura
+Aplikacja korzysta z serwisów oferowanych w całości przez platformę Azure. Schemat działania przedstawia się następująco:
+![Optional Text](images/architektura.png)
 
 ## Funkcjonalności
 * Rozpoznawanie chorób roślin na podstawie wprowadzonych zdjęć
 * Zapisywanie zwracanych predykcji w bazie danych
 * Analizowanie chorób roślin w zwracanych przez aplikację predykcjach
 * Prezentowanie panujących tendencji dotyczących chorób roślin
-
-## Architektura
-Schemat działania przedstawiony został w formie graficznej poniżej:
-![Optional Text](images/architecture.png)
-
 
 ## Technologie
 W projekcie wykorzystane zostały nastepujące technologie:
