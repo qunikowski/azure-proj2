@@ -25,7 +25,7 @@ class DBPrediction(declarative_base()):
     def as_dict(self):
         return {
             "id": self.id,
-            "tagName": self.tagName,
+            "tagName": self.tagName.replace('_', ' '),
             "datetime": datetime.datetime.strptime(self.dateTime, "%Y-%m-%d %H:%M:%S.%f")
         }
 
@@ -47,7 +47,7 @@ def add_prediction(img, prediction):
 
 def get_image(id):
     session = Session()
-    pre = session.query(DBPrediction).filter(DBPrediction.id == id).one().img
+    image = session.query(DBPrediction).filter(DBPrediction.id == id).one().img
     session.close()
     return image
 
