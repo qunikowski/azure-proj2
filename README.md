@@ -27,6 +27,8 @@ W przyszłości możliwe jest rozszerzenie zakresu funckjonowania aplikacji o ko
 
 ## Architektura
 Aplikacja korzysta z serwisów oferowanych w całości przez platformę Azure. Schemat działania przedstawia się następująco:
+![Optional Text](images/arch2.png)
+
 ![Untitled Diagram drawio(3)](https://user-images.githubusercontent.com/46055596/144931958-ccacfffe-b230-4eb7-825d-dff75f1d1730.png)
 
 
