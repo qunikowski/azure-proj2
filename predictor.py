@@ -1,11 +1,14 @@
 import requests as req
+import kv_secrets
 
 TRESHOLD = 0.3
-URL = "https://custom2-prediction.cognitiveservices.azure.com/customvision/v3.0/Prediction/c3ae4f26-6142-40a5-9f32-aa88f7b3edcf/classify/iterations/model_apple-corn-tomato/image"
+URL = kv_secrets.PREDICTOR_URL
+PREDICTION_KEY = kv_secrets.PREDICTION_KEY
 HEADERS = {
-    "Prediction-Key": "ca45f5702e424b16b87dc74ec7a41300",
+    "Prediction-Key": PREDICTION_KEY,
     "Content-Type": "application/octet-stream"
 }
+
 
 def get_prediction(img):
     response = req.post(URL, data=img, headers=HEADERS)

@@ -1,26 +1,11 @@
 from azure.keyvault.secrets import SecretClient
 from azure.identity import DefaultAzureCredential
 
-keyVaultName = "plant-diseases"
-KVUri = f"https://{keyVaultName}.vault.azure.net"
-
+KVUri = "https://plant-disease-detector.vault.azure.net"
 credential = DefaultAzureCredential()
 client = SecretClient(vault_url=KVUri, credential=credential)
 
-server = 'plant-disease-test-server.database.windows.net'
-database = "test"
-username = "admin123"
-password = '{Test123}'
-driver = '{SQL SERVER}'
+DATABASE_URL = client.get_secret('DATABASE-URL').value
+PREDICTOR_URL = client.get_secret('PREDICTOR-URL').value
+PREDICTION_KEY = client.get_secret('PREDICTION-KEY').value
 
-client.set_secret('server', server)
-client.set_secret('database', database)
-client.set_secret('username', username)
-client.set_secret('password', password)
-client.set_secret('driver', driver)
-
-print(f"Retrieving your secret from {keyVaultName}.")
-
-retrieved_secret = client.get_secret('username')
-
-print(f"Your secret is '{retrieved_secret.value}'.")

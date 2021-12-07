@@ -1,12 +1,14 @@
-import os
-import sqlalchemy.exc
-from sqlalchemy import create_engine, Column, Integer, String, LargeBinary
-from sqlalchemy.orm import sessionmaker, declarative_base
 import datetime
 from collections import Counter
 
-engine = create_engine(os.environ.get('DATABASE_URL', 'postgresql://dev:dev@localhost/dev'))
+from sqlalchemy import create_engine, Column, Integer, String, LargeBinary
+from sqlalchemy.orm import sessionmaker, declarative_base, defer
+
+import kv_secrets
+
+engine = create_engine(kv_secrets.DATABASE_URL)
 Session = sessionmaker(bind=engine)
+
 
 class DBPrediction(declarative_base()):
     __tablename__ = 'predictions'
@@ -21,7 +23,7 @@ class DBPrediction(declarative_base()):
         self.img = img
         self.tagName = tagName
         self.dateTime = dateTime
-    
+
     def as_dict(self):
         return {
             "id": self.id,
@@ -29,12 +31,14 @@ class DBPrediction(declarative_base()):
             "datetime": datetime.datetime.strptime(self.dateTime, "%Y-%m-%d %H:%M:%S.%f")
         }
 
+
 DBPrediction.metadata.create_all(bind=engine)
+
 
 def add_prediction(img, prediction):
     session = Session()
     prediction = DBPrediction(
-        None, 
+        None,
         img,
         prediction.get("tagName"),
         datetime.datetime.now()
@@ -45,16 +49,18 @@ def add_prediction(img, prediction):
     session.close()
     return pre_dict
 
+
 def get_image(id):
     session = Session()
     image = session.query(DBPrediction).filter(DBPrediction.id == id).one().img
     session.close()
     return image
 
+
 def get_last_week_predictions():
     week_ago = datetime.datetime.now() - datetime.timedelta(days=7)
     session = Session()
-    predictions = [x.as_dict() for x in session.query(DBPrediction).all()]
+    predictions = [x.as_dict() for x in session.query(DBPrediction).options(defer('img')).all()]
     predictions = [x['tagName'] for x in predictions if week_ago < x['datetime']]
     predictions = dict(Counter(predictions))
     print(predictions)

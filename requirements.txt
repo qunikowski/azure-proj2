@@ -1,7 +1,8 @@
 Flask
-opencv-python-headless==4.5.1.48
-numpy
 requests
+psycopg2-binary
+sqlalchemy
+gunicorn
 azure-identity
 azure-keyvault-secrets
 python-dotenv
