@@ -41,6 +41,7 @@ W projekcie wykorzystane zostały nastepujące technologie:
 - Azure Custom Vision
 - Azure Postgresql
 - Azure Web App
+- Azure Key Vault
 
 ## Opis rozwiązania
 
@@ -61,6 +62,9 @@ Projekt zakładał podpięcie Power BI do bazy danych, jednak napotkano problem 
     Twój dział IT wyłączył rejestrację dla produktu Microsoft Power BI. Skontaktuj się z nim, aby ukończyć rejestrację.
     
 W związku z tym zdecydowano się zamiast tego zrobić podsumowanie w dodatkowej zakładce w aplikacji webowej.
+
+### 5. Przechowywanie sekretów
+Bezpieczne przechowywanie sekretów, kluczów dostępowych do bazy danych, zostało zapewnione dzięki wykorzystaniu Azure Key Vault. Jest to usługa chmurowa, zapewnia bezpieczne przechowywanie i łatwy dostęp do sekretów, do ktorych dostęp chcemy kontrolować. 
 
 ## Demo działania
 
