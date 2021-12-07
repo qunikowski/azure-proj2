@@ -5,7 +5,7 @@ Project 2 for Microsoft Azure on WUT
 * [Team](#the-team)
 * [Tematyka projektu](#tematyka-projektu)
 * [Architektura](#architektura)
-* [Rozwiązanie](#rozwiązanie)
+* [Opis rozwiązania](#rozwiązanie)
 * [Demo dzałania](#demo-działania)
 
 ## The Team
@@ -29,8 +29,6 @@ W przyszłości możliwe jest rozszerzenie zakresu funckjonowania aplikacji o ko
 Aplikacja korzysta z serwisów oferowanych w całości przez platformę Azure. Schemat działania przedstawia się następująco:
 ![Optional Text](images/architektura11.png)
 
-![Untitled Diagram drawio(3)](https://user-images.githubusercontent.com/46055596/144931958-ccacfffe-b230-4eb7-825d-dff75f1d1730.png)
-
 
 ## Funkcjonalności
 * Rozpoznawanie chorób roślin na podstawie wprowadzonych zdjęć
@@ -53,7 +51,7 @@ Do wytrenowania modelu wykorzystano serwis Custom Vision. W obrębie serwisu zos
 ![Optional Text](images/performance.png)
 
 ### 2. Stworzenie aplikacji webowej
-Do stworzenia aplikacji webowej wykorzystano Pythonowego frameworka Flask. Aplikacja umożliwia wgranie własnego zdjęcia i zwrócenie dla niego wyników predykcji. Dostępna jest również karta ze statystykami, gdzie widnieją najpopularniejsze wyniki z ostatniego tygodnia. Z aplikacją powiązana jest baza danych. Aplikacja dostepna jest w Azure App Service pod adresem: //LINK
+Do stworzenia aplikacji webowej wykorzystano Pythonowego frameworka Flask. Aplikacja umożliwia wgranie własnego zdjęcia i zwrócenie dla niego wyników predykcji. Dostępna jest również karta ze statystykami, gdzie widnieją najpopularniejsze wyniki z ostatniego tygodnia. Z aplikacją powiązana jest baza danych. Aplikacja dostepna jest w Azure App Service pod adresem: https://plant-disease-detector.azurewebsites.net/stats
 
 ### 3. Stworzenie bazy danych
 Baza danych stworzona została w Azure Postgresql. W bazie przechowywane są wgrane zdjęcie, wynik predyckji oraz data. Dane te wykorzystywane są do pokazywania statystyk w aplikacji w zakładce Statistics. 
@@ -70,4 +68,4 @@ Bezpieczne przechowywanie sekretów, kluczów dostępowych do bazy danych, zosta
 
 ## Demo działania
 
-Demo działania aplikacji - >LINK<
+Demo działania aplikacji - https://www.youtube.com/watch?v=jhdA8_jOyJY&feature=youtu.be
